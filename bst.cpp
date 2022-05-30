@@ -12,7 +12,7 @@ Node *left,*right;
 class bst{
     public:
 Node *root,*temp,*temp1,*temp2 ,*temp3;
-int ansesstor;
+int ansesstor,counter=0;
 
 bst(){
     root=NULL;
@@ -229,9 +229,11 @@ void inorder(Node *temp){
 
         inorder(temp->left);
     }
-
+if(counter>1 && counter <=3){
     cout<<temp->info<<endl;
-    
+   
+}
+ counter++;
     if(temp->right!= NULL){
 
         inorder(temp->right);
@@ -274,9 +276,7 @@ b.insert(2,b.root);
 
 
 b.inorder(b.root);
-b.deleteNode(10,b.root);
-cout<<"\n";
-b.inorder(b.root); 
+
 
     return 0;
 }
